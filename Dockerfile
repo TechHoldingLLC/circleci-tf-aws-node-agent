@@ -8,7 +8,8 @@ RUN chmod -R 755 /home/circleci/.tgenv/bin/terragrunt
 RUN echo 'export PATH="$HOME/.tfenv/bin:$PATH"' >> /home/circleci/.bashrc
 RUN echo 'export PATH="$HOME/.tgenv/bin:$PATH"' >> /home/circleci/.bashrc
 
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+RUN sudo apt-get install -y nodejs
 
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 RUN unzip awscliv2.zip
